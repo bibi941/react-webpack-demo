@@ -11,6 +11,9 @@ module.exports = {
     library: 'ashRUI',
     libraryTarget: 'umd'
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
+  },
   module: {
     rules: [
       {
