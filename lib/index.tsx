@@ -1,5 +1,12 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Button from './button';
+import Icon from './icon/icon';
 
-ReactDom.render(<Button/>, document.body);
+const App = () => (
+  <div>
+    <Icon name='browse'/>
+    <Icon name='attachent'/>
+  </div>
+);
+
+ReactDom.render(<App/>, document.querySelector('#root'));
