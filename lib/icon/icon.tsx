@@ -7,6 +7,7 @@
 import React, { FC } from 'react';
 import './importAllSvg';
 import { classNames } from '../utils';
+import './index.scss';
 
 interface IProps extends React.SVGAttributes<SVGElement> {
   name: string
@@ -18,9 +19,8 @@ const Icon: FC<IProps> = ({
   ...restProps
 }) => {
   return (
-    <svg>
+    <svg className={classNames('ash-icon', className)}>
       <use
-        className={classNames('ash-icon', className)}
         xlinkHref={`#${name}`}
         {...restProps}
       />
