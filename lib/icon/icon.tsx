@@ -6,19 +6,25 @@
 */
 import React, { FC } from 'react';
 import './importAllSvg';
+import { classNames } from '../utils';
 
-interface IProps {
+interface IProps extends React.SVGAttributes<SVGElement> {
   name: string
 }
 
-const Icon: FC<IProps> = (props) => {
-
+const Icon: FC<IProps> = ({
+  className,
+  name,
+  ...restProps
+}) => {
   return (
-    <span>
-      <svg>
-        <use xlinkHref={`#${props.name}`}/>
-      </svg>
-    </span>
+    <svg>
+      <use
+        className={classNames('ash-icon', className)}
+        xlinkHref={`#${name}`}
+        {...restProps}
+      />
+    </svg>
   );
 };
 
