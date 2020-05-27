@@ -8,7 +8,7 @@
  * 合并 classname
  * @param names class
  */
-export const classNames = (...names: (string | undefined)[]) => {
+export const classNames = (...names: (string | undefined | false | null)[]) => {
   return names.filter(v => v).join(' ');
 };
 
