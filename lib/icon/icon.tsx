@@ -19,11 +19,11 @@ const Icon: FC<IProps> = ({
   ...restProps
 }) => {
   return (
-    <svg className={classNames('ash-icon', className)}>
-      <use
-        xlinkHref={`#${name}`}
-        {...restProps}
-      />
+    <svg
+      className={classNames('ash-icon', className)}
+      {...restProps}
+    >
+      <use xlinkHref={`#${name}`}/>
     </svg>
   );
 };
