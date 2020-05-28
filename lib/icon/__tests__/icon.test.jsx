@@ -7,10 +7,17 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import Icon from '../icon'
+import { mount } from 'enzyme'
 
 describe('icon', () => {
-  it('xxxx', () => {
+  it('icon-快照', () => {
     const json = renderer.create(<Icon name={'browse'}/>).toJSON()
     expect(json).toMatchSnapshot()
+  })
+  it('点击', () => {
+    const fn = jest.fn()
+    const component = mount(<Icon name={'browse'} onClick={fn}/>)
+    component.find('svg').simulate('click')
+    expect(fn).toBeCalled
   })
 })
