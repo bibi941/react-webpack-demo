@@ -33,24 +33,24 @@ jobs:
           paths:
             - dist
             - package.json
-            - README.md
             - LICENSE
+            - README.md
   test:
     <<: *defaults
     steps:
       - checkout
       - attach_workspace:
           at: .
+      - run: ls -la
       - run: yarn ci
       - store_test_results:
           path: test-results
-
   publish:
     <<: *defaults
     steps:
       - attach_workspace:
-      at: .
-        - run: npm publish
+        at: .
+      - run: npm publish
 
 
 workflows:
