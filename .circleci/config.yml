@@ -41,7 +41,6 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run: ls -la
       - run: yarn ci
       - store_test_results:
           path: test-results
@@ -49,7 +48,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-        at: .
+          at: .
       - run: npm publish
 
 
